@@ -49,3 +49,5 @@ function bookHotel(id) {
 }
 
 loadHotels();
+
+// test
