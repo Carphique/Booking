@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Booking/Booking.csproj" />
+  <Project Path="Frontend/Frontend.csproj" Id="ad4a07d7-6d53-4dac-9c60-26b4fa59f276" />
+</Solution>
