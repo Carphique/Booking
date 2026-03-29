@@ -1,26 +1,34 @@
 ﻿<!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Бронирование</title>
+    <title>Бронювання</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <h1>Бронирование</h1>
+    <div class="header">Booking</div>
 
-    <input type="email" id="email" placeholder="Ваш email"><br><br>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Бронювання</h2>
 
-    <label>Дата заезда:</label>
-    <input type="date" id="from"><br><br>
+            <input type="email" id="email" class="auth-input" placeholder="Email">
 
-    <label>Дата выезда:</label>
-    <input type="date" id="to"><br><br>
+            <label>Дата заїзду</label>
+            <input type="date" id="from" class="auth-input">
 
-    <button onclick="createBooking()">Подтвердить</button>
+            <label>Дата виїзду</label>
+            <input type="date" id="to" class="auth-input">
 
-    <p id="result"></p>
+            <button class="auth-btn" onclick="createBooking()">
+                Підтвердити
+            </button>
 
-    <script src="booking.js"></script>
+            <p id="result"></p>
+        </div>
+    </div>
 
+    <script src="js/booking.js"></script>
 </body>
 </html>

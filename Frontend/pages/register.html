@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+<div class="header">Booking</div>
+
+<div class="auth-container">
+    <div class="auth-card">
+
+        <div class="auth-title">Реєстрація</div>
+
+        <input id="firstName" class="auth-input" placeholder="Ім'я">
+        <input id="lastName" class="auth-input" placeholder="Прізвище">
+        <input id="email" class="auth-input" type="email" placeholder="Email">
+        <input id="phone" class="auth-input" placeholder="Телефон">
+        <input id="birth" class="auth-input" type="date">
+
+        <button class="auth-btn" onclick="register()">Зареєструватися</button>
+
+        <div class="auth-link">
+            Вже є акаунт? <a href="login.html">Увійти</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>

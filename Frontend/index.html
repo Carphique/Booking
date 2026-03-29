@@ -1,18 +1,31 @@
 ﻿<!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Отели</title>
+    <title>Booking</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <h1>Список отелей</h1>
+    <div class="header">
+        <div class="logo">Booking</div>
 
-    <input type="text" id="search" placeholder="Поиск по городу..." />
+        <div class="nav">
+            <span id="userInfo"></span>
+            <a href="pages/login.html">Увійти</a>
+            <a href="#" onclick="logout()">Вийти</a>
+        </div>
+    </div>
 
-    <div id="hotels"></div>
+    <div class="search-bar">
+        <input type="text" id="searchCity" placeholder="Куди ви хочете поїхати?">
+        <button onclick="search()">Пошук</button>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="loader">Завантаження...</div>
 
+    <div class="hotels" id="hotels"></div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
