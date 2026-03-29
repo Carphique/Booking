@@ -33,13 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include="css\main.css" />
+    <Content Include="booking.html" />
+    <Content Include="js\booking.js" />
+    <Content Include="css\auth.css" />
+    <Content Include="index.html" />
+    <Content Include="js\auth.js" />
+    <Content Include="pages\login.html" />
+    <Content Include="js\script.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="booking.html" />
-    <Content Include="booking.js" />
-    <Content Include="index.html" />
-    <Content Include="script.js" />
+    <Content Include="pages\register.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
