@@ -24,7 +24,7 @@ namespace Booking.Controllers
             if (room == null || !room.IsAvailable)
                 return BadRequest("Room not available");
 
-            var booking = new Booking
+            var booking = new Booking.Models.Booking
             {
                 Id = Guid.NewGuid(),
                 HotelId = dto.HotelId,
