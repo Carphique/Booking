@@ -2,30 +2,74 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Головна</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="bg-light">
 
-    <div class="header">
-        <div class="logo">Booking</div>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #003580;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Booking</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">
+                            🌍 Мова
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('uk')">🇺🇦 Українська</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">🇬🇧 English</a></li>
+                        </ul>
+                    </li>
 
-        <div class="nav">
-            <span id="userInfo"></span>
-            <a href="pages/login.html">Увійти</a>
-            <a href="#" onclick="logout()">Вийти</a>
+                    <li class="nav-item">
+                        <span class="nav-link text-white" id="userInfo"></span>
+                    </li>
+
+                    <li class="nav-item" id="loginLink">
+                        <a class="nav-link text-white" href="pages/login.html" data-lang="loginLink">Увійти</a>
+                    </li>
+
+                    <li class="nav-item d-none" id="logoutLink">
+                        <a class="nav-link text-white" href="#" onclick="logout()" data-lang="logoutLink">Вийти</a>
+                    </li>
+                        
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="card shadow-sm border-0" style="background-color: #febb02;">
+            <div class="card-body p-3 p-md-4">
+                <div class="d-flex flex-column flex-md-row gap-3">
+                    <input type="text" id="searchCity" class="form-control form-control-lg w-100" data-lang="searchPlaceholder" placeholder="Куди поїдемо?">
+                    <button onclick="search()" class="btn btn-primary btn-lg text-nowrap px-md-5" data-lang="searchBtn">Пошук</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="search-bar">
-        <input type="text" id="searchCity" placeholder="Куди ви хочете поїхати?">
-        <button onclick="search()">Пошук</button>
+    <div class="container mt-5 mb-5">
+        <h2 class="mb-4" data-lang="recommendedTitle">Рекомендовані готелі</h2>
+        <div id="loader" class="text-center my-4 d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Завантаження...</span>
+            </div>
+        </div>
+
+        <div class="row g-4" id="hotels">
+        </div>
     </div>
 
-    <div id="loader">Завантаження...</div>
-
-    <div class="hotels" id="hotels"></div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

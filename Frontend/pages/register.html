@@ -2,33 +2,72 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Реєстрація</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація - Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
-<div class="header">Booking</div>
-
-<div class="auth-container">
-    <div class="auth-card">
-
-        <div class="auth-title">Реєстрація</div>
-
-        <input id="firstName" class="auth-input" placeholder="Ім'я">
-        <input id="lastName" class="auth-input" placeholder="Прізвище">
-        <input id="email" class="auth-input" type="email" placeholder="Email">
-        <input id="phone" class="auth-input" placeholder="Телефон">
-        <input id="birth" class="auth-input" type="date">
-
-        <button class="auth-btn" onclick="register()">Зареєструватися</button>
-
-        <div class="auth-link">
-            Вже є акаунт? <a href="login.html">Увійти</a>
+    <nav class="navbar navbar-dark" style="background-color: #003580;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold fs-4 mb-0" href="../index.html">Booking</a>
+            <div class="dropdown">
+                <a class="text-white text-decoration-none dropdown-toggle" href="#" id="langDropdown" data-bs-toggle="dropdown">
+                    🌍 Мова
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('uk')">🇺🇦 Українська</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">🇬🇧 English</a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
+    <div class="container d-flex justify-content-center align-items-center my-5">
+        <div class="card shadow border-0" style="width: 100%; max-width: 500px; border-radius: 1rem;">
+            <div class="card-body p-5">
+                <h2 class="fw-bold text-center mb-4" style="color: #003580;" data-lang="regTitle">Створити акаунт</h2>
+
+                <div class="row g-2 mb-3">
+                    <div class="col-md-6 form-floating">
+                        <input type="text" class="form-control" id="firstName" data-lang="firstName" placeholder="Ім'я">
+                        <label for="firstName" class="ms-2" data-lang="firstName">Ім'я</label>
+                    </div>
+                    <div class="col-md-6 form-floating">
+                        <input type="text" class="form-control" id="lastName" data-lang="lastName" placeholder="Прізвище">
+                        <label for="lastName" class="ms-2" data-lang="lastName">Прізвище</label>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" data-lang="emailLabel" placeholder="Email">
+                    <label for="email" data-lang="emailLabel">Email адреса</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="phone" data-lang="phoneLabel" placeholder="+380...">
+                    <label for="phone" data-lang="phoneLabel">Номер телефону</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input type="date" class="form-control" id="birth">
+                    <label for="birth" data-lang="dobLabel">Дата народження</label>
+                </div>
+
+                <button class="btn btn-primary w-100 py-3 mb-3 fw-bold" onclick="register()" style="border-radius: 0.5rem;" data-lang="regBtn">
+                    Зареєструватися
+                </button>
+
+                <div class="text-center text-muted">
+                    <span data-lang="haveAccount">Вже є акаунт?</span> 
+                    <a href="login.html" class="text-decoration-none fw-bold" style="color: #003580;" data-lang="loginLink">Увійти</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<script src="../js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/lang.js"></script>
+    <script src="../js/auth.js"></script>
 </body>
 </html>
