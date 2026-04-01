@@ -7,4 +7,3 @@
         public bool IsCancelled { get; set; }
     }
 }
-    
