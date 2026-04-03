@@ -14,5 +14,7 @@
 
         public List<Room> Rooms { get; set; } = new();
         public List<Review> Reviews { get; set; } = new();
+        public List<Booking> Bookings { get; set; } = new();
+        public List<FavoriteHotel> FavoritedByUsers { get; set; } = new();
     }
 }

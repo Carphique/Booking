@@ -1,41 +1,22 @@
-﻿using Booking.Data;
-using Booking.DTO;
+﻿using Booking.DTO;
 using Booking.Models;
+using Booking.Sources;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Booking.Controllers
 {
     [ApiController]
-    [Route("api/favorites")]
+    [Route("api/[controller]")]
     public class FavoritesController : ControllerBase
     {
-        private readonly BookingDbContext _context;
-
-        public FavoritesController(BookingDbContext context)
-        {
-            _context = context;
-        }
+        private readonly FavoriteSource _source;
+        public FavoritesController(FavoriteSource source) => _source = source;
 
         [HttpGet("user/{userId:guid}")]
-        public async Task<ActionResult<List<HotelReadDTO>>> GetUserFavorites(Guid userId)
+        public async Task<IActionResult> GetUserFavorites(Guid userId)
         {
-            var favorites = await _context.FavoriteHotels
-                .Where(f => f.UserId == userId)
-                .Select(f => f.HotelId)
-                .ToListAsync();
-
-            return await _context.Hotels
-                .Where(h => favorites.Contains(h.Id))
-                .Select(h => new HotelReadDTO
-                {
-                    Id = h.Id,
-                    Name = h.Name,
-                    City = h.City,
-                    PricePerNight = h.PricePerNight,
-                    Rating = h.Rating,
-                    AvailableRoomsCount = h.AvailableRoomsCount,
-                    ImagePath = h.ImagePath
-                }).ToListAsync();
+            var favorites = await _source.GetUserFavoritesAsync(userId);
+            return Ok(favorites);
         }
 
         [HttpPost]
@@ -48,21 +29,14 @@ namespace Booking.Controllers
                 HotelId = dto.HotelId
             };
 
-            _context.FavoriteHotels.Add(favorite);
-            await _context.SaveChangesAsync();
+            await _source.AddAsync(favorite);
             return Ok(favorite);
         }
 
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> RemoveFavorite(Guid id)
         {
-            var favorite = await _context.FavoriteHotels.FindAsync(id);
-            if (favorite == null) return NotFound();
-
-            _context.FavoriteHotels.Remove(favorite);
-            await _context.SaveChangesAsync();
-            return NoContent();
+            return await _source.RemoveAsync(id) ? NoContent() : NotFound();
         }
     }
-
 }

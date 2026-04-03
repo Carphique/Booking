@@ -1,47 +1,49 @@
-﻿using Booking.Data;
-using Booking.DTO;
+﻿using Booking.DTO;
 using Booking.Models;
+using Booking.Sources;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Booking.Controllers
 {
     [ApiController]
-    [Route("api/users")]
+    [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly BookingDbContext _context;
+        private readonly UserSource _source;
 
-        public UsersController(BookingDbContext context)
+        public UsersController(UserSource source)
         {
-            _context = context;
+            _source = source;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<UserReadDTO>>> GetAll()
         {
-            return await _context.Users
-                .Select(u => new UserReadDTO
-                {
-                    Id = u.Id,
-                    FirstName = u.FirstName,
-                    LastName = u.LastName,
-                    Email = u.Email
-                }).ToListAsync();
+            var users = await _source.GetAllAsync();
+            var result = users.Select(u => new UserReadDTO
+            {
+                Id = u.Id,
+                FirstName = u.FirstName,
+                LastName = u.LastName,
+                Email = u.Email
+            }).ToList();
+
+            return Ok(result);
         }
 
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<UserReadDTO>> GetById(Guid id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null) return NotFound();
+            var user = await _source.GetByIdAsync(id);
+            if (user == null) return NotFound("Користувача не знайдено.");
 
-            return new UserReadDTO
+            return Ok(new UserReadDTO
             {
                 Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email
-            };
+            });
         }
 
         [HttpPost]
@@ -57,37 +59,29 @@ namespace Booking.Controllers
                 DateOfBirth = dto.DateOfBirth
             };
 
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            await _source.CreateAsync(user);
+
             return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Update(Guid id, UserCreateDTO dto)
+        public async Task<IActionResult> Update(Guid id, UserUpdateDTO dto)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null) return NotFound();
+            var success = await _source.UpdateAsync(id, dto);
 
-            user.FirstName = dto.FirstName;
-            user.LastName = dto.LastName;
-            user.Email = dto.Email;
-            user.PhoneNumber = dto.PhoneNumber;
-            user.DateOfBirth = dto.DateOfBirth;
+            if (!success)
+                return NotFound("Користувача не знайдено.");
 
-            await _context.SaveChangesAsync();
-            return Ok(user);
+            return Ok("Профіль користувача успішно оновлено.");
         }
 
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null) return NotFound();
+            var success = await _source.DeleteAsync(id);
+            if (!success) return NotFound();
 
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
             return NoContent();
         }
     }
-
 }

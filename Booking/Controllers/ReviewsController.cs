@@ -1,34 +1,22 @@
-﻿using Booking.Data;
-using Booking.DTO;
+﻿using Booking.DTO;
 using Booking.Models;
+using Booking.Sources;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Booking.Controllers
 {
     [ApiController]
-    [Route("api/reviews")]
+    [Route("api/[controller]")]
     public class ReviewsController : ControllerBase
     {
-        private readonly BookingDbContext _context;
-
-        public ReviewsController(BookingDbContext context)
-        {
-            _context = context;
-        }
+        private readonly ReviewSource _source;
+        public ReviewsController(ReviewSource source) => _source = source;
 
         [HttpGet("hotel/{hotelId:guid}")]
-        public async Task<ActionResult<List<ReviewReadDTO>>> GetHotelReviews(Guid hotelId)
+        public async Task<IActionResult> GetHotelReviews(Guid hotelId)
         {
-            return await _context.Reviews
-                .Where(r => r.HotelId == hotelId)
-                .Select(r => new ReviewReadDTO
-                {
-                    Id = r.Id,
-                    HotelId = r.HotelId,
-                    UserId = r.UserId,
-                    Rating = r.Rating,
-                    Comment = r.Comment
-                }).ToListAsync();
+            var reviews = await _source.GetByHotelIdAsync(hotelId);
+            return Ok(reviews);
         }
 
         [HttpPost]
@@ -44,8 +32,7 @@ namespace Booking.Controllers
                 CreatedAt = DateTime.UtcNow
             };
 
-            _context.Reviews.Add(review);
-            await _context.SaveChangesAsync();
+            await _source.CreateAsync(review);
             return Ok(review);
         }
     }

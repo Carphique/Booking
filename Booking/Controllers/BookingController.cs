@@ -1,76 +1,35 @@
-﻿using Booking.Data;
-using Booking.DTO;
-using Booking.Models;
+﻿using Booking.DTO;
+using Booking.Sources;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-namespace Booking.Controllers
+using System.Security.Claims;
+[ApiController]
+[Route("api/[controller]")]
+public class BookingsController : ControllerBase
 {
-    [ApiController]
-    [Route("api/bookings")]
-    public class BookingsController : ControllerBase
+    private readonly BookingSource _source;
+    public BookingsController(BookingSource source) => _source = source;
+
+    [HttpPost]
+    public async Task<IActionResult> Create(BookingCreateDTO dto)
     {
-        private readonly BookingDbContext _context;
-
-        public BookingsController(BookingDbContext context)
+        var booking = new Booking.Models.Booking
         {
-            _context = context;
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create(BookingCreateDTO dto)
-        {
-            var room = await _context.Rooms.FindAsync(dto.RoomId);
-            if (room == null || !room.IsAvailable)
-                return BadRequest("Room not available");
-
-            var booking = new Booking
-            {
-                Id = Guid.NewGuid(),
-                HotelId = dto.HotelId,
-                RoomId = dto.RoomId,
-                UserId = dto.UserId,
-                DateFrom = dto.DateFrom,
-                DateTo = dto.DateTo,
-                IsCancelled = false
-            };
-
-            room.IsAvailable = false;
-            _context.Bookings.Add(booking);
-            await _context.SaveChangesAsync();
-
-            return Ok(booking);
-        }
-
-        [HttpPut("{id:guid}/cancel")]
-        public async Task<IActionResult> Cancel(Guid id)
-        {
-            var booking = await _context.Bookings.FindAsync(id);
-            if (booking == null) return NotFound();
-
-            booking.IsCancelled = true;
-            var room = await _context.Rooms.FindAsync(booking.RoomId);
-            if (room != null) room.IsAvailable = true;
-
-            await _context.SaveChangesAsync();
-            return Ok(booking);
-        }
-
-        [HttpGet("user/{userId:guid}")]
-        public async Task<ActionResult<List<BookingReadDTO>>> GetUserBookings(Guid userId)
-        {
-            return await _context.Bookings
-                .Where(b => b.UserId == userId)
-                .Select(b => new BookingReadDTO
-                {
-                    Id = b.Id,
-                    HotelId = b.HotelId,
-                    RoomId = b.RoomId,
-                    UserId = b.UserId,
-                    DateFrom = b.DateFrom,
-                    DateTo = b.DateTo,
-                    IsCancelled = b.IsCancelled
-                }).ToListAsync();
-        }
+            Id = Guid.NewGuid(),
+            HotelId = dto.HotelId,
+            RoomId = dto.RoomId,
+            UserId = dto.UserId,
+            DateFrom = dto.DateFrom,
+            DateTo = dto.DateTo
+        };
+        var result = await _source.CreateAsync(booking);
+        return result == null ? BadRequest("Кімната зайнята") : Ok(result);
     }
+
+    [HttpPut("{id:guid}/cancel")]
+    public async Task<IActionResult> Cancel(Guid id) =>
+        await _source.CancelAsync(id) ? Ok("Скасовано") : NotFound();
+
+    [HttpGet("user/{userId:guid}")]
+    public async Task<IActionResult> GetUserBookings(Guid userId) => Ok(await _source.GetByUserIdAsync(userId));
 }

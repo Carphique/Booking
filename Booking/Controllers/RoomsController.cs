@@ -1,35 +1,22 @@
-﻿using Booking.Data;
-using Booking.DTO;
+﻿using Booking.DTO;
 using Booking.Models;
+using Booking.Sources;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Booking.Controllers
 {
     [ApiController]
-    [Route("api/rooms")]
+    [Route("api/[controller]")]
     public class RoomsController : ControllerBase
     {
-        private readonly BookingDbContext _context;
-
-        public RoomsController(BookingDbContext context)
-        {
-            _context = context;
-        }
+        private readonly RoomSource _source;
+        public RoomsController(RoomSource source) => _source = source;
 
         [HttpGet("hotel/{hotelId:guid}")]
-        public async Task<ActionResult<List<RoomReadDTO>>> GetRooms(Guid hotelId)
+        public async Task<IActionResult> GetRooms(Guid hotelId)
         {
-            return await _context.Rooms
-                .Where(r => r.HotelId == hotelId)
-                .Select(r => new RoomReadDTO
-                {
-                    Id = r.Id,
-                    RoomNumber = r.RoomNumber,
-                    RoomType = r.RoomType,
-                    Capacity = r.Capacity,
-                    PricePerNight = r.PricePerNight,
-                    IsAvailable = r.IsAvailable
-                }).ToListAsync();
+            var rooms = await _source.GetByHotelIdAsync(hotelId);
+            return Ok(rooms);
         }
 
         [HttpPost]
@@ -46,36 +33,14 @@ namespace Booking.Controllers
                 IsAvailable = true
             };
 
-            _context.Rooms.Add(room);
-            await _context.SaveChangesAsync();
-            return Ok(room);
-        }
-
-        [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Update(Guid id, RoomUpdateDTO dto)
-        {
-            var room = await _context.Rooms.FindAsync(id);
-            if (room == null) return NotFound();
-
-            room.RoomType = dto.RoomType;
-            room.Capacity = dto.Capacity;
-            room.PricePerNight = dto.PricePerNight;
-            room.IsAvailable = dto.IsAvailable;
-
-            await _context.SaveChangesAsync();
+            await _source.CreateAsync(room);
             return Ok(room);
         }
 
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var room = await _context.Rooms.FindAsync(id);
-            if (room == null) return NotFound();
-
-            _context.Rooms.Remove(room);
-            await _context.SaveChangesAsync();
-            return NoContent();
+            return await _source.DeleteAsync(id) ? NoContent() : NotFound();
         }
     }
-
 }
