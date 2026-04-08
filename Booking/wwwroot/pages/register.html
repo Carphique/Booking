@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація - Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .form-floating > .form-control:focus {
+            z-index: 3;
+        }
+
+        .input-group:focus-within {
+            z-index: 5;
+        }
+    </style>
+</head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark" style="background-color: #003580;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="../index.html">Booking</a>
+        </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center align-items-center my-5">
+        <div class="card shadow border-0" style="width: 100%; max-width: 500px; border-radius: 1rem;">
+            <div class="card-body p-5">
+                <h2 class="fw-bold text-center mb-4" style="color: #003580;">Створити акаунт</h2>
+
+                <div class="row g-2 mb-3">
+                    <div class="col-md-6 form-floating">
+                        <input type="text" class="form-control" id="firstName" placeholder="Ім'я">
+                        <label for="firstName" class="ms-2">Ім'я</label>
+                    </div>
+                    <div class="col-md-6 form-floating">
+                        <input type="text" class="form-control" id="lastName" placeholder="Прізвище">
+                        <label for="lastName" class="ms-2">Прізвище</label>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <label for="email">Email адреса</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="phone" placeholder="+380...">
+                    <label for="phone">Номер телефону</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="birth">
+                    <label for="birth">Дата народження</label>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="form-floating flex-grow-1">
+                        <input type="password" class="form-control" id="regPassword" placeholder="Пароль" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                        <label for="regPassword">Пароль</label>
+                    </div>
+                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('regPassword', 'toggleIcon1')">
+                        <i class="bi bi-eye" id="toggleIcon1"></i>
+                    </button>
+                </div>
+
+                <div class="input-group mb-4">
+                    <div class="form-floating flex-grow-1">
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Підтвердіть пароль" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                        <label for="confirmPassword">Підтвердіть пароль</label>
+                    </div>
+                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('confirmPassword', 'toggleIcon2')">
+                        <i class="bi bi-eye" id="toggleIcon2"></i>
+                    </button>
+                </div>
+
+                <button class="btn btn-primary w-100 py-3 mb-3 fw-bold" onclick="register()">
+                    Зареєструватися
+                </button>
+
+                <div class="text-center text-muted">
+                    <span>Вже є акаунт?</span>
+                    <a href="login.html" class="text-decoration-none fw-bold" style="color: #003580;">Увійти</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿/* Стили для форм входа и регистрации */
+
+body {
+    background-color: #f8f9fa; /* Светлый фон */
+}
+
+.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #003580; /* Тот самый синий цвет Booking */
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #00224f;
+    }
+
+.form-floating label {
+    color: #6c757d;
+}
+
+/* Стиль для группы с паролем и глазиком */
+.input-group .btn-outline-secondary {
+    border-color: #dee2e6;
+    border-left: none;
+    color: #003580;
+    background-color: white;
+}
+
+.input-group .form-control {
+    border-right: none;
+}
+
+    .input-group .form-control:focus {
+        border-color: #86b7fe;
+        box-shadow: none;
+    }
+
+/* Убираем закругления там, где инпут стыкуется с кнопкой-глазиком */
+.input-group .form-floating > .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group > .btn {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.text-muted a {
+    transition: color 0.2s;
+}
+
+    .text-muted a:hover {
+        color: #00224f !important;
+    }

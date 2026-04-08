@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід - Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark" style="background-color: #003580;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold fs-4 mb-0" href="../index.html">Booking</a>
+            <div class="dropdown">
+                <a class="text-white text-decoration-none dropdown-toggle" href="#" id="langDropdown" data-bs-toggle="dropdown">
+                    🌍 Мова
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('uk')">🇺🇦 Українська</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">🇬🇧 English</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+        <div class="card shadow border-0" style="width: 100%; max-width: 400px; border-radius: 1rem;">
+            <div class="card-body p-5">
+                <h2 class="fw-bold text-center mb-4" style="color: #003580;" data-lang="loginTitle">Вхід</h2>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" data-lang="emailLabel" placeholder="Email">
+                    <label for="email" data-lang="emailLabel">Email адреса</label>
+                </div>
+                
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control" id="password" data-lang="passLabel" placeholder="Password">
+                    <label for="password" data-lang="passLabel">Пароль</label>
+                </div>
+
+                <button class="btn btn-primary w-100 py-3 mb-3 fw-bold" onclick="login()" style="border-radius: 0.5rem;" data-lang="loginBtn">
+                    Увійти
+                </button>
+
+                <div class="text-center text-muted">
+                    <span data-lang="noAccount">Немає акаунту?</span> 
+                    <a href="register.html" class="text-decoration-none fw-bold" data-lang="registerLink">Зареєструватися</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/lang.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

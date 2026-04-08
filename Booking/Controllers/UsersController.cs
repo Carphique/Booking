@@ -56,6 +56,7 @@ namespace Booking.Controllers
                 LastName = dto.LastName,
                 Email = dto.Email,
                 PhoneNumber = dto.PhoneNumber,
+                PasswordHash = dto.Password, 
                 DateOfBirth = dto.DateOfBirth
             };
 
