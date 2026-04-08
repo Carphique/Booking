@@ -7,15 +7,12 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Настройка авторизации
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -31,6 +28,18 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// Добавляем CORS ДО builder.Build()
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin() // Для разработки разрешаем запросы с любых адресов
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// Регистрация сервисов
 builder.Services.AddScoped<HotelSource>();
 builder.Services.AddScoped<BookingSource>();
 builder.Services.AddScoped<RoomSource>();
@@ -40,22 +49,25 @@ builder.Services.AddScoped<FavoriteSource>();
 builder.Services.AddScoped<AuthSource>();
 
 
-
-
-
+// ================= ГРАНИЦА =================
 var app = builder.Build();
+// ===========================================
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
-
-
-
 app.UseHttpsRedirection();
 
+// === МАГИЯ ЗДЕСЬ: Раздача фронтенда ===
+app.UseDefaultFiles(); // Сервер будет искать index.html по умолчанию
+app.UseStaticFiles();  // Сервер будет отдавать css, js и картинки из wwwroot
+// =====================================
+
+// UseCors должен идти ПЕРЕД UseAuthentication и UseAuthorization
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 

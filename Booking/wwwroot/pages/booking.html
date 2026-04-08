@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформлення бронювання - Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark" style="background-color: #003580;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold fs-4 mb-0" href="../index.html">Booking</a>
+            <div class="dropdown">
+                <a class="text-white text-decoration-none dropdown-toggle" href="#" id="langDropdown" data-bs-toggle="dropdown">🌍 Мова</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('uk')">🇺🇦 Українська</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">🇬🇧 English</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container d-flex justify-content-center align-items-center my-4">
+        <div class="card shadow border-0" style="width: 100%; max-width: 600px; border-radius: 1rem;">
+            
+            <img src="https://images.unsplash.com/photo-1566073171639-4d8ef8468725?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Hotel" style="height: 150px; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+            
+            <div class="card-body p-5">
+                <h2 class="fw-bold text-center mb-2" style="color: #003580;" data-lang="bookTitle">Оформлення бронювання</h2>
+                <p class="text-center text-muted mb-4" data-lang="bookDesc">Будь ласка, оберіть дати вашого візиту</p>
+
+                <div id="resultAlert" class="alert alert-danger d-none" role="alert"></div>
+
+                <div class="row g-2 mb-4">
+                    <div class="col-md-6 form-floating">
+                        <input type="date" class="form-control" id="from">
+                        <label for="from" class="ms-2" data-lang="dateFrom">Дата заїзду</label>
+                    </div>
+                    <div class="col-md-6 form-floating">
+                        <input type="date" class="form-control" id="to">
+                        <label for="to" class="ms-2" data-lang="dateTo">Дата виїзду</label>
+                    </div>
+                </div>
+
+                <div class="bg-light p-3 rounded mb-4 border">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted" data-lang="priceLabel">Ціна за ніч</span>
+                        <span class="fw-bold">1500 грн</span>
+                    </div>
+                    <hr class="my-2">
+                    <div class="d-flex justify-content-between">
+                        <span class="fw-bold" data-lang="totalLabel">До сплати на місці:</span>
+                        <span class="fw-bold text-success fs-5" data-lang="notCalc">Поки не розраховано</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary w-100 py-3 fw-bold fs-5" onclick="createBooking()" style="border-radius: 0.5rem;">
+                    <i class="bi bi-check2-circle"></i> <span data-lang="confirmBook">Підтвердити бронювання</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/lang.js"></script>
+    <script src="../js/booking.js"></script>
+</body>
+</html>

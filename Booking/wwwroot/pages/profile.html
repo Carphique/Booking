@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій профіль - Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark shadow-sm" style="background-color: #003580;">
+        <div class="container d-flex justify-content-between align-items-center"> 
+            <a class="navbar-brand fw-bold fs-4 mb-0" href="../index.html">Booking</a>
+            
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <a class="text-white text-decoration-none dropdown-toggle" href="#" id="langDropdown" data-bs-toggle="dropdown">🌍 Мова</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('uk')">🇺🇦 Українська</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">🇬🇧 English</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-outline-light btn-sm" onclick="logout()" data-lang="logoutLink">Вийти з акаунту</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <h2 class="fw-bold mb-4" data-lang="profileTitle">Особистий кабінет</h2>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm" style="border-radius: 1rem;">
+                    <div class="card-body p-4 text-center">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex justify-content-center align-items-center mb-3" style="width: 80px; height: 80px; font-size: 2rem;">
+                            <i class="bi bi-person"></i>
+                        </div>
+                        <h4 class="fw-bold" id="userName">Олена Іванова</h4>
+                        <p class="text-muted mb-1" id="userEmail">olena@example.com</p>
+                        <hr>
+                        <button class="btn btn-outline-primary w-100" data-lang="editProfile">Редагувати профіль</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm p-4" style="border-radius: 1rem;">
+                    <h4 class="fw-bold mb-4" data-lang="historyTitle">Історія бронювань</h4>
+
+                    <div class="card mb-3 border-start border-success border-4 shadow-sm">
+                        <div class="card-body d-flex justify-content-between align-items-center flex-wrap gap-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">Grand Resort Spa & Relax</h5>
+                                <p class="text-muted small mb-1"><i class="bi bi-calendar-check"></i> 12 Травня - 15 Травня 2026</p>
+                                <span class="badge bg-success" data-lang="confirmed">Підтверджено</span>
+                            </div>
+                            <div class="text-end">
+                                <h5 class="text-success fw-bold">4500 грн</h5>
+                                <button class="btn btn-sm btn-outline-danger mt-2" data-lang="cancelBtn">Скасувати бронь</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3 border-start border-danger border-4 shadow-sm bg-light">
+                        <div class="card-body d-flex justify-content-between align-items-center flex-wrap gap-3">
+                            <div>
+                                <h5 class="fw-bold mb-1 text-muted">City Center Hotel</h5>
+                                <p class="text-muted small mb-1"><i class="bi bi-calendar-x"></i> 1 Квітня - 3 Квітня 2026</p>
+                                <span class="badge bg-danger" data-lang="cancelled">Скасовано</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/lang.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
