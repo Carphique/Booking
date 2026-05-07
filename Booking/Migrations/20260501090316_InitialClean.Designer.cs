@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260415160253_Initial")]
-    partial class Initial
+    [Migration("20260501090316_InitialClean")]
+    partial class InitialClean
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -118,7 +118,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000001"),
                             AvailableRoomsCount = 4,
                             City = "Київ",
-                            ImagePath = "https://images.unsplash.com/photo-1551882547-ff40c0d1398c",
+                            ImagePath = "/images/1.jpg",
                             Name = "Premier Palace Hotel",
                             PricePerNight = 5000m,
                             Rating = 9.1999999999999993
@@ -128,7 +128,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000002"),
                             AvailableRoomsCount = 2,
                             City = "Київ",
-                            ImagePath = "https://images.unsplash.com/photo-1542314831-c6a4d27ce006",
+                            ImagePath = "/images/2.jpg",
                             Name = "Hilton Kyiv",
                             PricePerNight = 7500m,
                             Rating = 9.4000000000000004
@@ -138,7 +138,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000003"),
                             AvailableRoomsCount = 3,
                             City = "Одеса",
-                            ImagePath = "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+                            ImagePath = "/images/3.jpg",
                             Name = "M1 Club Hotel",
                             PricePerNight = 4500m,
                             Rating = 9.5
@@ -148,7 +148,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000004"),
                             AvailableRoomsCount = 5,
                             City = "Одеса",
-                            ImagePath = "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+                            ImagePath = "/images/4.jpg",
                             Name = "Bristol Hotel",
                             PricePerNight = 3200m,
                             Rating = 9.0
@@ -158,7 +158,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000005"),
                             AvailableRoomsCount = 6,
                             City = "Львів",
-                            ImagePath = "https://images.unsplash.com/photo-1564501049412-61c2a3083791",
+                            ImagePath = "/images/5.jpg",
                             Name = "Bankhotel",
                             PricePerNight = 4100m,
                             Rating = 9.5999999999999996
@@ -168,7 +168,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000006"),
                             AvailableRoomsCount = 3,
                             City = "Львів",
-                            ImagePath = "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+                            ImagePath = "/images/6.jpg",
                             Name = "Grand Hotel Lviv",
                             PricePerNight = 3800m,
                             Rating = 9.1999999999999993
@@ -178,7 +178,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000007"),
                             AvailableRoomsCount = 7,
                             City = "Харків",
-                            ImagePath = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+                            ImagePath = "/images/7.jpg",
                             Name = "Kharkiv Palace",
                             PricePerNight = 3500m,
                             Rating = 9.4000000000000004
@@ -188,7 +188,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000008"),
                             AvailableRoomsCount = 4,
                             City = "Харків",
-                            ImagePath = "https://images.unsplash.com/photo-1590490359683-658d3d23f972",
+                            ImagePath = "/images/8.jpg",
                             Name = "Nemo Hotel Kharkiv",
                             PricePerNight = 4200m,
                             Rating = 9.0999999999999996
@@ -198,7 +198,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000009"),
                             AvailableRoomsCount = 10,
                             City = "Дніпро",
-                            ImagePath = "https://images.unsplash.com/photo-1618773928121-c32242fa4703",
+                            ImagePath = "/images/9.jpg",
                             Name = "Menorah Hotel",
                             PricePerNight = 2900m,
                             Rating = 9.3000000000000007
@@ -208,7 +208,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000010"),
                             AvailableRoomsCount = 2,
                             City = "Дніпро",
-                            ImagePath = "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+                            ImagePath = "/images/10.jpg",
                             Name = "Bartolomeo Resort",
                             PricePerNight = 4800m,
                             Rating = 9.0
@@ -218,7 +218,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000011"),
                             AvailableRoomsCount = 5,
                             City = "Вінниця",
-                            ImagePath = "https://images.unsplash.com/photo-1551882547-ff40c0d1398c",
+                            ImagePath = "/images/11.jpg",
                             Name = "Hotel France",
                             PricePerNight = 2500m,
                             Rating = 9.0999999999999996
@@ -228,7 +228,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000012"),
                             AvailableRoomsCount = 3,
                             City = "Вінниця",
-                            ImagePath = "https://images.unsplash.com/photo-1542314831-c6a4d27ce006",
+                            ImagePath = "/images/12.jpg",
                             Name = "Feride Hotel",
                             PricePerNight = 2800m,
                             Rating = 8.9000000000000004
@@ -238,7 +238,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000013"),
                             AvailableRoomsCount = 2,
                             City = "Луцьк",
-                            ImagePath = "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+                            ImagePath = "/images/13.jpg",
                             Name = "Noble Boutique Hotel",
                             PricePerNight = 2300m,
                             Rating = 9.4000000000000004
@@ -248,7 +248,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000014"),
                             AvailableRoomsCount = 6,
                             City = "Луцьк",
-                            ImagePath = "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+                            ImagePath = "/images/14.jpg",
                             Name = "Zalesie Hotel",
                             PricePerNight = 1800m,
                             Rating = 8.6999999999999993
@@ -258,7 +258,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000015"),
                             AvailableRoomsCount = 5,
                             City = "Донецьк",
-                            ImagePath = "https://images.unsplash.com/photo-1564501049412-61c2a3083791",
+                            ImagePath = "/images/15.jpg",
                             Name = "Donbass Palace",
                             PricePerNight = 4000m,
                             Rating = 9.1999999999999993
@@ -268,7 +268,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000016"),
                             AvailableRoomsCount = 8,
                             City = "Донецьк",
-                            ImagePath = "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+                            ImagePath = "/images/16.jpg",
                             Name = "Victoria Hotel",
                             PricePerNight = 3500m,
                             Rating = 8.8000000000000007
@@ -278,7 +278,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000017"),
                             AvailableRoomsCount = 12,
                             City = "Житомир",
-                            ImagePath = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+                            ImagePath = "/images/17.jpg",
                             Name = "Reikartz Zhytomyr",
                             PricePerNight = 2100m,
                             Rating = 8.5999999999999996
@@ -288,7 +288,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000018"),
                             AvailableRoomsCount = 4,
                             City = "Житомир",
-                            ImagePath = "https://images.unsplash.com/photo-1590490359683-658d3d23f972",
+                            ImagePath = "/images/18.jpg",
                             Name = "Chalet Hotel",
                             PricePerNight = 2400m,
                             Rating = 9.0
@@ -298,7 +298,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000019"),
                             AvailableRoomsCount = 5,
                             City = "Ужгород",
-                            ImagePath = "https://images.unsplash.com/photo-1618773928121-c32242fa4703",
+                            ImagePath = "/images/19.jpg",
                             Name = "Hotel Duet Plus",
                             PricePerNight = 2600m,
                             Rating = 9.3000000000000007
@@ -308,7 +308,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000020"),
                             AvailableRoomsCount = 7,
                             City = "Ужгород",
-                            ImagePath = "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+                            ImagePath = "/images/20.jpg",
                             Name = "Praha Hotel",
                             PricePerNight = 2200m,
                             Rating = 8.9000000000000004
@@ -318,7 +318,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000021"),
                             AvailableRoomsCount = 8,
                             City = "Запоріжжя",
-                            ImagePath = "https://images.unsplash.com/photo-1551882547-ff40c0d1398c",
+                            ImagePath = "/images/21.jpg",
                             Name = "Khortitsa Palace",
                             PricePerNight = 3100m,
                             Rating = 9.0999999999999996
@@ -328,7 +328,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000022"),
                             AvailableRoomsCount = 15,
                             City = "Запоріжжя",
-                            ImagePath = "https://images.unsplash.com/photo-1542314831-c6a4d27ce006",
+                            ImagePath = "/images/22.jpg",
                             Name = "Intourist Hotel",
                             PricePerNight = 1900m,
                             Rating = 8.5
@@ -338,7 +338,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000023"),
                             AvailableRoomsCount = 6,
                             City = "Івано-Франківськ",
-                            ImagePath = "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+                            ImagePath = "/images/23.jpg",
                             Name = "Nadiya Hotel",
                             PricePerNight = 2400m,
                             Rating = 9.1999999999999993
@@ -348,7 +348,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000024"),
                             AvailableRoomsCount = 4,
                             City = "Івано-Франківськ",
-                            ImagePath = "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+                            ImagePath = "/images/24.jpg",
                             Name = "Stanislaviv",
                             PricePerNight = 2000m,
                             Rating = 8.8000000000000007
@@ -358,7 +358,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000025"),
                             AvailableRoomsCount = 9,
                             City = "Кропивницький",
-                            ImagePath = "https://images.unsplash.com/photo-1564501049412-61c2a3083791",
+                            ImagePath = "/images/25.jpg",
                             Name = "Reikartz Kropyvnytskyi",
                             PricePerNight = 2200m,
                             Rating = 8.6999999999999993
@@ -368,7 +368,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000026"),
                             AvailableRoomsCount = 11,
                             City = "Кропивницький",
-                            ImagePath = "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+                            ImagePath = "/images/26.jpg",
                             Name = "Hotel Zirka",
                             PricePerNight = 1600m,
                             Rating = 8.1999999999999993
@@ -378,7 +378,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000027"),
                             AvailableRoomsCount = 5,
                             City = "Луганськ",
-                            ImagePath = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+                            ImagePath = "/images/27.jpg",
                             Name = "Hotel Initial",
                             PricePerNight = 1800m,
                             Rating = 8.4000000000000004
@@ -388,7 +388,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000028"),
                             AvailableRoomsCount = 8,
                             City = "Луганськ",
-                            ImagePath = "https://images.unsplash.com/photo-1590490359683-658d3d23f972",
+                            ImagePath = "/images/28.jpg",
                             Name = "Druzhba Hotel",
                             PricePerNight = 1500m,
                             Rating = 8.0
@@ -398,7 +398,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000029"),
                             AvailableRoomsCount = 7,
                             City = "Миколаїв",
-                            ImagePath = "https://images.unsplash.com/photo-1618773928121-c32242fa4703",
+                            ImagePath = "/images/29.jpg",
                             Name = "Reikartz River",
                             PricePerNight = 2500m,
                             Rating = 9.0
@@ -408,7 +408,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000030"),
                             AvailableRoomsCount = 4,
                             City = "Миколаїв",
-                            ImagePath = "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+                            ImagePath = "/images/30.jpg",
                             Name = "Palace Ukraine",
                             PricePerNight = 2100m,
                             Rating = 8.5999999999999996
@@ -418,7 +418,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000031"),
                             AvailableRoomsCount = 3,
                             City = "Полтава",
-                            ImagePath = "https://images.unsplash.com/photo-1551882547-ff40c0d1398c",
+                            ImagePath = "/images/31.jpg",
                             Name = "Premier Hotel Palazzo",
                             PricePerNight = 2700m,
                             Rating = 9.4000000000000004
@@ -428,7 +428,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000032"),
                             AvailableRoomsCount = 6,
                             City = "Полтава",
-                            ImagePath = "https://images.unsplash.com/photo-1542314831-c6a4d27ce006",
+                            ImagePath = "/images/32.jpg",
                             Name = "Reikartz Gallery",
                             PricePerNight = 2300m,
                             Rating = 8.9000000000000004
@@ -438,7 +438,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000033"),
                             AvailableRoomsCount = 2,
                             City = "Рівне",
-                            ImagePath = "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+                            ImagePath = "/images/33.jpg",
                             Name = "Boutique Hotel",
                             PricePerNight = 2600m,
                             Rating = 9.1999999999999993
@@ -448,7 +448,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000034"),
                             AvailableRoomsCount = 8,
                             City = "Рівне",
-                            ImagePath = "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+                            ImagePath = "/images/34.jpg",
                             Name = "Optima Rivne",
                             PricePerNight = 1900m,
                             Rating = 8.5
@@ -458,7 +458,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000035"),
                             AvailableRoomsCount = 5,
                             City = "Суми",
-                            ImagePath = "https://images.unsplash.com/photo-1564501049412-61c2a3083791",
+                            ImagePath = "/images/35.jpg",
                             Name = "Reikartz Sumy",
                             PricePerNight = 2000m,
                             Rating = 8.8000000000000007
@@ -468,7 +468,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000036"),
                             AvailableRoomsCount = 3,
                             City = "Суми",
-                            ImagePath = "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+                            ImagePath = "/images/36.jpg",
                             Name = "Shafran Hotel",
                             PricePerNight = 2200m,
                             Rating = 9.0999999999999996
@@ -478,7 +478,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000037"),
                             AvailableRoomsCount = 6,
                             City = "Тернопіль",
-                            ImagePath = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+                            ImagePath = "/images/37.jpg",
                             Name = "Avalon Palace",
                             PricePerNight = 2400m,
                             Rating = 9.0
@@ -488,7 +488,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000038"),
                             AvailableRoomsCount = 4,
                             City = "Тернопіль",
-                            ImagePath = "https://images.unsplash.com/photo-1590490359683-658d3d23f972",
+                            ImagePath = "/images/38.jpg",
                             Name = "Garden Hall",
                             PricePerNight = 2100m,
                             Rating = 8.5999999999999996
@@ -498,7 +498,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000039"),
                             AvailableRoomsCount = 10,
                             City = "Херсон",
-                            ImagePath = "https://images.unsplash.com/photo-1618773928121-c32242fa4703",
+                            ImagePath = "/images/39.jpg",
                             Name = "Optima Kherson",
                             PricePerNight = 1800m,
                             Rating = 8.5
@@ -508,7 +508,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000040"),
                             AvailableRoomsCount = 3,
                             City = "Херсон",
-                            ImagePath = "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+                            ImagePath = "/images/40.jpg",
                             Name = "Play Hotel by Ribas",
                             PricePerNight = 2300m,
                             Rating = 9.1999999999999993
@@ -518,7 +518,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000041"),
                             AvailableRoomsCount = 4,
                             City = "Хмельницький",
-                            ImagePath = "https://images.unsplash.com/photo-1551882547-ff40c0d1398c",
+                            ImagePath = "/images/41.jpg",
                             Name = "Arena Hotel",
                             PricePerNight = 2500m,
                             Rating = 9.0999999999999996
@@ -528,7 +528,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000042"),
                             AvailableRoomsCount = 2,
                             City = "Хмельницький",
-                            ImagePath = "https://images.unsplash.com/photo-1542314831-c6a4d27ce006",
+                            ImagePath = "/images/42.jpg",
                             Name = "Sobkoff Hotel",
                             PricePerNight = 2800m,
                             Rating = 9.4000000000000004
@@ -538,7 +538,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000043"),
                             AvailableRoomsCount = 6,
                             City = "Черкаси",
-                            ImagePath = "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+                            ImagePath = "/images/43.jpg",
                             Name = "Apelsin Hotel",
                             PricePerNight = 2200m,
                             Rating = 8.9000000000000004
@@ -548,7 +548,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000044"),
                             AvailableRoomsCount = 8,
                             City = "Черкаси",
-                            ImagePath = "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+                            ImagePath = "/images/44.jpg",
                             Name = "Optima Cherkasy",
                             PricePerNight = 1900m,
                             Rating = 8.5999999999999996
@@ -558,7 +558,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000045"),
                             AvailableRoomsCount = 5,
                             City = "Чернівці",
-                            ImagePath = "https://images.unsplash.com/photo-1564501049412-61c2a3083791",
+                            ImagePath = "/images/45.jpg",
                             Name = "Bukovyna Hotel",
                             PricePerNight = 2700m,
                             Rating = 9.3000000000000007
@@ -568,7 +568,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000046"),
                             AvailableRoomsCount = 2,
                             City = "Чернівці",
-                            ImagePath = "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+                            ImagePath = "/images/46.jpg",
                             Name = "AllureInn",
                             PricePerNight = 3000m,
                             Rating = 9.5
@@ -578,7 +578,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000047"),
                             AvailableRoomsCount = 7,
                             City = "Чернігів",
-                            ImagePath = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+                            ImagePath = "/images/47.jpg",
                             Name = "Riverside Resort",
                             PricePerNight = 2400m,
                             Rating = 9.0
@@ -588,7 +588,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000048"),
                             AvailableRoomsCount = 5,
                             City = "Чернігів",
-                            ImagePath = "https://images.unsplash.com/photo-1590490359683-658d3d23f972",
+                            ImagePath = "/images/48.jpg",
                             Name = "Reikartz Chernihiv",
                             PricePerNight = 2100m,
                             Rating = 8.6999999999999993
@@ -598,7 +598,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000049"),
                             AvailableRoomsCount = 4,
                             City = "Сімферополь",
-                            ImagePath = "https://images.unsplash.com/photo-1618773928121-c32242fa4703",
+                            ImagePath = "/images/49.jpg",
                             Name = "Ukraina Hotel",
                             PricePerNight = 3500m,
                             Rating = 8.8000000000000007
@@ -608,7 +608,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000050"),
                             AvailableRoomsCount = 2,
                             City = "Ялта",
-                            ImagePath = "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+                            ImagePath = "/images/50.jpg",
                             Name = "Yalta Intourist",
                             PricePerNight = 5500m,
                             Rating = 9.4000000000000004
@@ -618,7 +618,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000051"),
                             AvailableRoomsCount = 8,
                             City = "Буковель",
-                            ImagePath = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+                            ImagePath = "/images/51.jpg",
                             Name = "Radisson Blu Resort",
                             PricePerNight = 6200m,
                             Rating = 9.3000000000000007
@@ -628,7 +628,7 @@ namespace Booking.Migrations
                             Id = new Guid("00000000-0000-0000-0000-000000000052"),
                             AvailableRoomsCount = 5,
                             City = "Буковель",
-                            ImagePath = "https://images.unsplash.com/photo-1590490359683-658d3d23f972",
+                            ImagePath = "/images/52.jpg",
                             Name = "F&B Spa Resort",
                             PricePerNight = 5100m,
                             Rating = 9.0
@@ -698,6 +698,528 @@ namespace Booking.Migrations
                     b.HasIndex("HotelId");
 
                     b.ToTable("Rooms");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000001"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000001"),
+                            IsAvailable = true,
+                            PricePerNight = 5000m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000002"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000002"),
+                            IsAvailable = true,
+                            PricePerNight = 7500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000003"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000003"),
+                            IsAvailable = true,
+                            PricePerNight = 4500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000004"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000004"),
+                            IsAvailable = true,
+                            PricePerNight = 3200m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000005"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000005"),
+                            IsAvailable = true,
+                            PricePerNight = 4100m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000006"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000006"),
+                            IsAvailable = true,
+                            PricePerNight = 3800m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000007"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000007"),
+                            IsAvailable = true,
+                            PricePerNight = 3500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000008"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000008"),
+                            IsAvailable = true,
+                            PricePerNight = 4200m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000009"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000009"),
+                            IsAvailable = true,
+                            PricePerNight = 2900m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000010"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000010"),
+                            IsAvailable = true,
+                            PricePerNight = 4800m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000011"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000011"),
+                            IsAvailable = true,
+                            PricePerNight = 2500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000012"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000012"),
+                            IsAvailable = true,
+                            PricePerNight = 2800m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000013"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000013"),
+                            IsAvailable = true,
+                            PricePerNight = 2300m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000014"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000014"),
+                            IsAvailable = true,
+                            PricePerNight = 1800m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000015"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000015"),
+                            IsAvailable = true,
+                            PricePerNight = 4000m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000016"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000016"),
+                            IsAvailable = true,
+                            PricePerNight = 3500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000017"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000017"),
+                            IsAvailable = true,
+                            PricePerNight = 2100m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000018"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000018"),
+                            IsAvailable = true,
+                            PricePerNight = 2400m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000019"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000019"),
+                            IsAvailable = true,
+                            PricePerNight = 2600m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000020"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000020"),
+                            IsAvailable = true,
+                            PricePerNight = 2200m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000021"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000021"),
+                            IsAvailable = true,
+                            PricePerNight = 3100m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000022"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000022"),
+                            IsAvailable = true,
+                            PricePerNight = 1900m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000023"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000023"),
+                            IsAvailable = true,
+                            PricePerNight = 2400m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000024"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000024"),
+                            IsAvailable = true,
+                            PricePerNight = 2000m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000025"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000025"),
+                            IsAvailable = true,
+                            PricePerNight = 2200m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000026"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000026"),
+                            IsAvailable = true,
+                            PricePerNight = 1600m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000027"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000027"),
+                            IsAvailable = true,
+                            PricePerNight = 1800m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000028"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000028"),
+                            IsAvailable = true,
+                            PricePerNight = 1500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000029"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000029"),
+                            IsAvailable = true,
+                            PricePerNight = 2500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000030"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000030"),
+                            IsAvailable = true,
+                            PricePerNight = 2100m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000031"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000031"),
+                            IsAvailable = true,
+                            PricePerNight = 2700m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000032"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000032"),
+                            IsAvailable = true,
+                            PricePerNight = 2300m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000033"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000033"),
+                            IsAvailable = true,
+                            PricePerNight = 2600m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000034"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000034"),
+                            IsAvailable = true,
+                            PricePerNight = 1900m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000035"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000035"),
+                            IsAvailable = true,
+                            PricePerNight = 2000m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000036"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000036"),
+                            IsAvailable = true,
+                            PricePerNight = 2200m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000037"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000037"),
+                            IsAvailable = true,
+                            PricePerNight = 2400m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000038"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000038"),
+                            IsAvailable = true,
+                            PricePerNight = 2100m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000039"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000039"),
+                            IsAvailable = true,
+                            PricePerNight = 1800m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000040"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000040"),
+                            IsAvailable = true,
+                            PricePerNight = 2300m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000041"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000041"),
+                            IsAvailable = true,
+                            PricePerNight = 2500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000042"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000042"),
+                            IsAvailable = true,
+                            PricePerNight = 2800m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000043"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000043"),
+                            IsAvailable = true,
+                            PricePerNight = 2200m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000044"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000044"),
+                            IsAvailable = true,
+                            PricePerNight = 1900m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000045"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000045"),
+                            IsAvailable = true,
+                            PricePerNight = 2700m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000046"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000046"),
+                            IsAvailable = true,
+                            PricePerNight = 3000m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000047"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000047"),
+                            IsAvailable = true,
+                            PricePerNight = 2400m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000048"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000048"),
+                            IsAvailable = true,
+                            PricePerNight = 2100m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000049"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000049"),
+                            IsAvailable = true,
+                            PricePerNight = 3500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000050"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000050"),
+                            IsAvailable = true,
+                            PricePerNight = 5500m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000051"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000051"),
+                            IsAvailable = true,
+                            PricePerNight = 6200m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        },
+                        new
+                        {
+                            Id = new Guid("10000000-0000-0000-0000-000000000052"),
+                            Capacity = 2,
+                            HotelId = new Guid("00000000-0000-0000-0000-000000000052"),
+                            IsAvailable = true,
+                            PricePerNight = 5100m,
+                            RoomNumber = "101",
+                            RoomType = "Standard"
+                        });
                 });
 
             modelBuilder.Entity("Booking.Models.User", b =>

@@ -19,10 +19,21 @@
         <p class="text-primary mb-3"><i class="bi bi-geo-alt-fill"></i> <span id="hotelCity">Місто</span></p>
 
         <div class="row g-2 mb-4">
-            <div class="col-md-8"><img src="" class="img-fluid w-100 rounded" style="height: 400px; object-fit: cover;" alt="Main"></div>
+            <div class="col-md-8">
+                <img id="hotelImgMain" src=""
+                     class="img-fluid w-100 rounded"
+                     style="height: 400px; object-fit: cover;"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/003580/FFF?text=Фото'">
+            </div>
             <div class="col-md-4 d-flex flex-column gap-2">
-                <img src="" class="img-fluid w-100 rounded" style="height: 196px; object-fit: cover;" alt="Sub">
-                <img src="" class="img-fluid w-100 rounded" style="height: 196px; object-fit: cover;" alt="Sub">
+                <img id="hotelImgSub1" src=""
+                     class="img-fluid w-100 rounded"
+                     style="height: 196px; object-fit: cover;"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/003580/FFF?text=Фото'">
+                <img id="hotelImgSub2" src=""
+                     class="img-fluid w-100 rounded"
+                     style="height: 196px; object-fit: cover;"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/003580/FFF?text=Фото'">
             </div>
         </div>
 
@@ -63,5 +74,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/booking.js"></script>
 </body>
 </html>

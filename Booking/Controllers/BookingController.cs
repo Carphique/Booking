@@ -11,6 +11,7 @@ public class BookingsController : ControllerBase
     public BookingsController(BookingSource source) => _source = source;
 
     [HttpPost]
+    //[Authorize]
     public async Task<IActionResult> Create(BookingCreateDTO dto)
     {
         var booking = new Booking.Models.Booking

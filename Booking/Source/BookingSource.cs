@@ -10,10 +10,6 @@ namespace Booking.Sources
 
         public async Task<Booking.Models.Booking?> CreateAsync(Booking.Models.Booking booking)
         {
-            var room = await _context.Rooms.FindAsync(booking.RoomId);
-            if (room == null || !room.IsAvailable) return null;
-
-            room.IsAvailable = false;
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
             return booking;
